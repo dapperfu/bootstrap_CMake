@@ -1,5 +1,5 @@
 @ECHO OFF
-if "%PROJECT_ENV%"="" (
+if "%PROJECT_ENV%"=="" (
 set PROJECT_ENV=%~dp0
 )
 
@@ -20,6 +20,5 @@ if not exist %PKG% %~dp0curl.exe -L -o %PROJECT_ENV%%PKG% %URL%
 : If the package has not been 'installed' install it.
 if not exist %PROJECT_ENV%cmake-3.11.0-rc4-win64-x64 7z x %PKG% -y -o%PROJECT_ENV%
 
-set PATH=%PATH%;%PROJECT_ENV%cmake-3.11.0-rc4-win64-x64\bin
-
-pause
+attrib +r %~dp0cmake-3.11.0-rc4-win64-x64
+attrib +h %~dp0.
