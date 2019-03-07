@@ -15,5 +15,10 @@ pipeline {
         }
       }
     }
+    stage('Stage 2') {
+      steps {
+        bat(script: 'bootstrap_cmake.bat', encoding: 'UTF-8', label: 'bootstrap_cmake', returnStatus: true, returnStdout: true)
+      }
+    }
   }
 }
