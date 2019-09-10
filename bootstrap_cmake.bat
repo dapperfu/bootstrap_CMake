@@ -1,12 +1,14 @@
 @ECHO OFF
+:
 if "%PROJECT_ENV%"=="" (
+: Use this directory.
 set PROJECT_ENV=%~dp0
 )
 
 : If download URL is not defined (set through Jenkins, etc)
 IF "%CMAKE_URL%"=="" (
 : Use a known default
-set URL=https://cmake.org/files/v3.11/cmake-3.11.0-rc4-win64-x64.zip
+set URL=https://cmake.org/files/v3.15/cmake-3.15.3-win64-x64.zip
 ) ELSE (
 : Otherwise use the given URL.
 set URL=%CMAKE_URL%
